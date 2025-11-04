@@ -1,0 +1,33 @@
+{
+  "name": "preact-rag-tailwind-app",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "preview": "vite preview",
+    "test": "vitest --no-color",
+    "test:run": "vitest run --no-color",
+    "test:coverage": "vitest run --coverage --no-color",
+    "test:ui": "vitest --ui",
+    "docs": "NO_COLOR=1 npx typedoc --skipErrorChecking --logLevel Warn",
+    "docs:watch": "NO_COLOR=1 npx typedoc --watch --skipErrorChecking --logLevel Warn"
+  },
+  "dependencies": {
+    "preact": "^10.27.2"
+  },
+  "devDependencies": {
+    "@preact/preset-vite": "^2.10.2",
+    "@testing-library/jest-dom": "^6.9.1",
+    "@testing-library/preact": "^3.2.4",
+    "@types/node": "^24.10.0",
+    "@vitest/coverage-v8": "^4.0.7",
+    "@vitest/ui": "^4.0.7",
+    "jsdom": "^27.1.0",
+    "typedoc": "^0.28.14",
+    "typescript": "~5.9.3",
+    "vite": "^7.1.12",
+    "vitest": "^4.0.7"
+  }
+}

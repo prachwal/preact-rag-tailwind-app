@@ -1,0 +1,38 @@
+{
+  "$schema": "https://typedoc.org/schema.json",
+  "entryPoints": ["src/index.ts"],
+  "out": "docs",
+  "name": "Preact RAG Tailwind App",
+  "tsconfig": "tsconfig.app.json",
+  "includeVersion": true,
+  "exclude": [
+    "**/*.test.ts",
+    "**/*.test.tsx",
+    "**/*.spec.ts",
+    "**/*.spec.tsx",
+    "**/test/**",
+    "**/__tests__/**",
+    "**/node_modules/**",
+    "**/coverage/**",
+    "**/dist/**"
+  ],
+  "excludeExternals": true,
+  "excludePrivate": true,
+  "excludeProtected": true,
+  "hideGenerator": true,
+  "readme": "README.md",
+  "theme": "default",
+  "categorizeByGroup": true,
+  "categoryOrder": ["Components", "Hooks", "Utils", "Types", "*"],
+  "defaultCategory": "Other",
+  "gitRevision": "main",
+  "githubPages": false,
+  "searchInComments": true,
+  "cleanOutputDir": true,
+  "emit": "docs",
+  "validation": {
+    "notExported": true,
+    "invalidLink": true,
+    "notDocumented": false
+  }
+}
