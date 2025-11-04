@@ -5,7 +5,7 @@
  * @returns The sum of a and b
  */
 export function add(a: number, b: number): number {
-  return a + b
+  return a + b;
 }
 
 /**
@@ -15,7 +15,7 @@ export function add(a: number, b: number): number {
  * @returns The product of a and b
  */
 export function multiply(a: number, b: number): number {
-  return a * b
+  return a * b;
 }
 
 /**
@@ -24,5 +24,5 @@ export function multiply(a: number, b: number): number {
  * @returns True if the number is even, false otherwise
  */
 export function isEven(n: number): boolean {
-  return n % 2 === 0
+  return n % 2 === 0;
 }

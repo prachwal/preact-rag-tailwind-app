@@ -6,14 +6,11 @@
  * - Setting up automatic cleanup after each test to prevent test pollution
  */
 
-import { expect, afterEach } from 'vitest'
-import { cleanup } from '@testing-library/preact'
-import * as matchers from '@testing-library/jest-dom/matchers'
-
-// Extend Vitest's expect with jest-dom matchers for better DOM assertions
-expect.extend(matchers)
+import { afterEach } from 'vitest';
+import { cleanup } from '@testing-library/preact';
+import '@testing-library/jest-dom/vitest';
 
 // Cleanup after each test to prevent DOM pollution between tests
 afterEach(() => {
-  cleanup()
-})
+  cleanup();
+});

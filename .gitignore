@@ -28,3 +28,8 @@ coverage
 
 # Generated documentation
 docs
+
+# Test results
+test-results.xml
+*storybook.log
+storybook-static

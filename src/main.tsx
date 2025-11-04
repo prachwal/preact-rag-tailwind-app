@@ -1,5 +1,11 @@
-import { render } from 'preact'
-import './index.css'
-import { App } from './app.tsx'
+import { render } from 'preact';
+import '@/index.css';
+import { App } from '.';
+import { SignalsProvider } from '@/contexts/SignalsContext';
 
-render(<App />, document.getElementById('app')!)
+render(
+  <SignalsProvider>
+    <App />
+  </SignalsProvider>,
+  document.getElementById('app')!
+);

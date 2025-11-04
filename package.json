@@ -1,33 +1,106 @@
 {
   "name": "preact-rag-tailwind-app",
+  "description": "A modern web application built with Preact, TypeScript, Tailwind CSS, and Vite",
+  "version": "0.0.1",
   "private": true,
-  "version": "0.0.0",
   "type": "module",
+  "main": "dist/index.cjs",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    },
+    "./style": "./dist/index.css"
+  },
+  "homepage": "https://github.com/username/preact-rag-tailwind-app#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/username/preact-rag-tailwind-app.git"
+  },
+  "bugs": {
+    "url": "https://github.com/username/preact-rag-tailwind-app/issues"
+  },
+  "keywords": [
+    "preact",
+    "typescript",
+    "tailwindcss",
+    "vite",
+    "react",
+    "frontend",
+    "webapp"
+  ],
+  "author": "Przemyslaw Rachwal <przemyslaw.rachwal@gmail.com>",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=8.0.0"
+  },
+  "funding": {
+    "type": "github",
+    "url": "https://github.com/sponsors/username"
+  },
+  "preferGlobal": false,
+  "os": [
+    "darwin",
+    "linux",
+    "win32"
+  ],
+  "cpu": [
+    "x64",
+    "arm64"
+  ],
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build",
+    "build": "tsc -b && vite build && tsc -p tsconfig.types.json",
     "preview": "vite preview",
     "test": "vitest --no-color",
     "test:run": "vitest run --no-color",
     "test:coverage": "vitest run --coverage --no-color",
     "test:ui": "vitest --ui",
+    "test:watch": "vitest",
+    "lint": "eslint src --ext .ts,.tsx",
+    "lint:fix": "eslint src --ext .ts,.tsx --fix",
+    "type-check": "tsc --noEmit",
+    "format": "prettier --write \"src/**/*.{ts,tsx,json,css,md}\"",
+    "format:check": "prettier --check \"src/**/*.{ts,tsx,json,css,md}\"",
     "docs": "NO_COLOR=1 npx typedoc --skipErrorChecking --logLevel Warn",
-    "docs:watch": "NO_COLOR=1 npx typedoc --watch --skipErrorChecking --logLevel Warn"
+    "docs:watch": "NO_COLOR=1 npx typedoc --watch --skipErrorChecking --logLevel Warn",
+    "clean": "rm -rf dist docs coverage test-results.xml",
+    "ci": "npm run lint && npm run type-check && npm run test:run && npm run build",
+    "prepare": "npm run type-check",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
   },
   "dependencies": {
+    "@preact/signals": "^2.3.2",
     "preact": "^10.27.2"
   },
   "devDependencies": {
+    "@chromatic-com/storybook": "^4.1.2",
     "@preact/preset-vite": "^2.10.2",
+    "@storybook/addon-a11y": "^10.0.4",
+    "@storybook/addon-docs": "^10.0.4",
+    "@storybook/addon-vitest": "^10.0.4",
+    "@storybook/preact-vite": "^10.0.4",
     "@testing-library/jest-dom": "^6.9.1",
     "@testing-library/preact": "^3.2.4",
     "@types/node": "^24.10.0",
+    "@typescript-eslint/eslint-plugin": "^8.46.3",
+    "@typescript-eslint/parser": "^8.46.3",
     "@vitest/coverage-v8": "^4.0.7",
     "@vitest/ui": "^4.0.7",
+    "eslint": "^9.39.1",
+    "eslint-plugin-storybook": "^10.0.4",
     "jsdom": "^27.1.0",
+    "prettier": "^3.6.2",
+    "storybook": "^10.0.4",
     "typedoc": "^0.28.14",
     "typescript": "~5.9.3",
-    "vite": "^7.1.12",
+    "vite": "^7.2.0",
+    "vite-plugin-dts": "^4.5.4",
     "vitest": "^4.0.7"
   }
 }

@@ -1,0 +1,300 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+
+
+---
+title: Configure
+description: Instructions on how to configure and set up the Preact RAG Tailwind App project
+---
+
+# Configure
+
+This document provides instructions on how to configure and set up the Preact RAG Tailwind App project.
+
+## Prerequisites
+
+Before you begin, ensure you have the following installed on your system:
+
+- **Node.js**: Version 18.0.0 or higher
+- **npm**: Version 8.0.0 or higher (comes with Node.js)
+
+You can check your versions by running:
+
+```bash
+node --version
+npm --version
+```
+
+## Installation
+
+1. Clone the repository:
+
+```bash
+git clone https://github.com/prachwal/preact-rag-tailwind-app.git
+cd preact-rag-tailwind-app
+```
+
+2. Install dependencies:
+
+```bash
+npm install
+```
+
+This will install all necessary dependencies including Preact, TypeScript, Tailwind CSS, Vite, and testing frameworks.
+
+## Development Setup
+
+### Running the Development Server
+
+To start the development server with hot reloading:
+
+```bash
+npm run dev
+```
+
+This will start Vite's development server. Open your browser and navigate to `http://localhost:5173` to view the application.
+
+### Building the Application
+
+To build the application for production:
+
+```bash
+npm run build
+```
+
+This command will:
+- Type-check the code with TypeScript
+- Bundle the application with Vite
+- Generate type definitions
+
+The built files will be in the `dist/` directory.
+
+### Previewing the Production Build
+
+To preview the production build locally:
+
+```bash
+npm run preview
+```
+
+## Testing
+
+The project uses Vitest for unit testing.
+
+### Running Tests
+
+To run all tests:
+
+```bash
+npm test
+```
+
+To run tests in watch mode:
+
+```bash
+npm run test:watch
+```
+
+To run tests once (for CI):
+
+```bash
+npm run test:run
+```
+
+To run tests with coverage:
+
+```bash
+npm run test:coverage
+```
+
+To open the Vitest UI:
+
+```bash
+npm run test:ui
+```
+
+## Code Quality
+
+### Linting
+
+To check for linting errors:
+
+```bash
+npm run lint
+```
+
+To automatically fix linting issues:
+
+```bash
+npm run lint:fix
+```
+
+### Type Checking
+
+To run TypeScript type checking:
+
+```bash
+npm run type-check
+```
+
+### Formatting
+
+To format code with Prettier:
+
+```bash
+npm run format
+```
+
+To check if code is formatted correctly:
+
+```bash
+npm run format:check
+```
+
+## Documentation
+
+### Generating API Documentation
+
+The project uses TypeDoc to generate API documentation:
+
+```bash
+npm run docs
+```
+
+To generate documentation in watch mode:
+
+```bash
+npm run docs:watch
+```
+
+Documentation will be generated in the `docs/` directory.
+
+## Project Structure
+
+```
+preact-rag-tailwind-app/
+├── src/
+│   ├── app.css          # Main CSS styles
+│   ├── app.test.tsx     # App component tests
+│   ├── app.tsx          # Main App component
+│   ├── contexts/        # React contexts
+│   │   └── SignalsContext.tsx
+│   ├── index.css        # Global CSS
+│   ├── index.ts         # Main entry point
+│   ├── main.tsx         # Application bootstrap
+│   ├── test/            # Test configuration
+│   │   └── setup.ts
+│   └── utils/           # Utility functions
+│       ├── math.test.ts
+│       ├── math.ts
+│       ├── signals.test.ts
+│       └── signals.ts
+├── public/              # Static assets
+├── dist/                # Build output (generated)
+├── docs/                # API documentation (generated)
+├── index.html           # HTML template
+├── package.json         # Project dependencies and scripts
+├── tsconfig*.json       # TypeScript configurations
+├── vite.config.ts       # Vite configuration
+└── eslint.config.js     # ESLint configuration
+```
+
+## Configuration Files
+
+### TypeScript
+
+- `tsconfig.json`: Base TypeScript configuration
+- `tsconfig.app.json`: Configuration for the application code
+- `tsconfig.node.json`: Configuration for Node.js tooling
+- `tsconfig.test.json`: Configuration for test files
+- `tsconfig.types.json`: Configuration for generating type definitions
+
+### Vite
+
+- `vite.config.ts`: Vite build tool configuration with Preact preset
+
+### ESLint
+
+- `eslint.config.js`: ESLint configuration for code linting
+
+### Prettier
+
+- `.prettierrc`: Prettier code formatting configuration
+
+## Environment Variables
+
+The application doesn't currently use environment variables, but you can add them by creating a `.env` file in the root directory. Vite will automatically load variables prefixed with `VITE_`.
+
+## Deployment
+
+The built application in the `dist/` directory can be deployed to any static hosting service like:
+
+- Vercel
+- Netlify
+- GitHub Pages
+- AWS S3 + CloudFront
+
+## Troubleshooting
+
+### Common Issues
+
+1. **Build fails with TypeScript errors**: Run `npm run type-check` to see detailed type errors.
+
+2. **Tests fail**: Ensure all dependencies are installed with `npm install`. Check test setup in `src/test/setup.ts`.
+
+3. **Linting errors**: Run `npm run lint:fix` to automatically fix common issues.
+
+4. **Port already in use**: Vite will automatically use the next available port if 5173 is occupied.
+
+### Getting Help
+
+If you encounter issues not covered here:
+
+1. Check the [GitHub Issues](https://github.com/prachwal/preact-rag-tailwind-app/issues) for similar problems
+2. Create a new issue with detailed information about your setup and the error
+
+## Contributing
+
+When contributing to this project:
+
+1. Follow the existing code style
+2. Add tests for new features
+3. Update documentation as needed
+4. Run the full CI suite: `npm run ci`
+
+<div className="features-grid">
+  <div className="feature-item">
+    <h4>Modern Stack</h4>
+    <p>Built with Preact, TypeScript, and Tailwind CSS for a modern development experience.</p>
+  </div>
+  <div className="feature-item">
+    <h4>Fast Development</h4>
+    <p>Vite provides lightning-fast hot reloading and optimized builds.</p>
+  </div>
+  <div className="feature-item">
+    <h4>Comprehensive Testing</h4>
+    <p>Vitest ensures reliable code with fast unit tests and coverage reporting.</p>
+  </div>
+</div>
+
+<style jsx>{`
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 40px;
+  }
+  .feature-item {
+    padding: 20px;
+    border: 1px solid #e1e5e9;
+    border-radius: 8px;
+    background: #f8f9fa;
+  }
+  .feature-item h4 {
+    margin-top: 0;
+    color: #2c3e50;
+  }
+  .feature-item p {
+    margin-bottom: 0;
+    color: #34495e;
+  }
+`}</style>

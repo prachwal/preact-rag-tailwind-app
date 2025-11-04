@@ -5,11 +5,13 @@
  * exporting all public APIs and components.
  */
 
+import '@/index.css';
+
 // Components
-export { App } from './app'
+export { App } from '@/app';
 
 // Utilities
-export { add, multiply, isEven } from './utils/math'
+export { add, multiply, isEven } from '@/utils/math';
 
 // Re-export Preact hooks for convenience
-export { useState, useEffect, useCallback, useMemo } from 'preact/hooks'
+export { useState, useEffect, useCallback, useMemo } from 'preact/hooks';

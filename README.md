@@ -5,6 +5,7 @@ A modern web application built with Preact, TypeScript, Tailwind CSS, and Vite. 
 ## 🚀 Features
 
 - **Preact**: Lightweight React alternative with the same API
+- **Preact Signals**: Reactive state management for optimal performance
 - **TypeScript**: Full type safety and excellent developer experience
 - **Tailwind CSS**: Utility-first CSS framework for rapid styling
 - **Vite**: Fast build tool with HMR (Hot Module Replacement)
@@ -15,7 +16,7 @@ A modern web application built with Preact, TypeScript, Tailwind CSS, and Vite. 
 
 ## 📦 Tech Stack
 
-- **Framework**: Preact 10.27.2
+- **Framework**: Preact 10.27.2 + Signals
 - **Language**: TypeScript 5.9.3
 - **Build Tool**: Vite 7.1.12
 - **Styling**: Tailwind CSS (via PostCSS)
@@ -119,6 +120,57 @@ describe('ComponentName', () => {
 
 Run `npm run test:coverage` to generate a coverage report. Aim for high coverage while focusing on meaningful tests.
 
+## ⚡ Preact Signals
+
+This project uses Preact Signals for reactive state management, providing optimal performance and a simple API for managing application state.
+
+### Basic Usage
+
+```typescript
+import { signal } from '@preact/signals';
+
+// Create a signal
+const count = signal(0);
+
+// Read the value
+console.log(count.value); // 0
+
+// Update the value
+count.value = 1;
+
+// Signals automatically update components when their values change
+function Counter() {
+  return <div>Count: {count}</div>;
+}
+```
+
+### Signal Utilities
+
+The project includes several utility functions for common signal patterns:
+
+```typescript
+import { createCounter, createToggle, persistentSignal } from './utils/signals';
+
+// Counter with increment/decrement methods
+const counter = createCounter(0);
+counter.increment(); // counter.count.value === 1
+
+// Toggle with on/off methods
+const darkMode = createToggle(false);
+darkMode.toggle(); // darkMode.state.value === true
+
+// Persistent signal that syncs with localStorage
+const theme = persistentSignal('theme', 'light');
+theme.value = 'dark'; // Automatically saved to localStorage
+```
+
+### Benefits of Signals
+
+- **Performance**: Automatic dependency tracking and minimal re-renders
+- **Simplicity**: No complex state management libraries needed
+- **Type Safety**: Full TypeScript support with inferred types
+- **Flexibility**: Works with existing React patterns and hooks
+
 ## 📚 Documentation
 
 ### API Documentation
@@ -215,6 +267,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## 🙏 Acknowledgments
 
 - [Preact](https://preactjs.com/) - The React alternative
+- [Preact Signals](https://preactjs.com/guide/v10/signals/) - Reactive state management
 - [Vite](https://vitejs.dev/) - Fast build tool
 - [Tailwind CSS](https://tailwindcss.com/) - Utility-first CSS
 - [Vitest](https://vitest.dev/) - Modern testing framework

@@ -1,6 +1,8 @@
 {
   "$schema": "https://typedoc.org/schema.json",
-  "entryPoints": ["src/index.ts"],
+  "entryPoints": [
+    "src/index.ts"
+  ],
   "out": "docs",
   "name": "Preact RAG Tailwind App",
   "tsconfig": "tsconfig.app.json",
@@ -23,7 +25,13 @@
   "readme": "README.md",
   "theme": "default",
   "categorizeByGroup": true,
-  "categoryOrder": ["Components", "Hooks", "Utils", "Types", "*"],
+  "categoryOrder": [
+    "Components",
+    "Hooks",
+    "Utils",
+    "Types",
+    "*"
+  ],
   "defaultCategory": "Other",
   "gitRevision": "main",
   "githubPages": false,
